@@ -32,14 +32,17 @@
 |
 */
 
-/*
-Route::get('/', function()
-{
-	return View::make('home.index');
-});
-*/
+
+
+
+Route::get('/auth', 'auth@index');
+Route::get('/login', 'auth@login');
+Route::get('/logout', 'auth@logout');
 
 Route::controller(Controller::detect());
+
+Route::get('/', array('as' => 'welcome', 'uses' => 'chat@index'));
+
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers
@@ -110,5 +113,5 @@ Route::filter('csrf', function()
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::to('login');
+	if (Auth::guest()) return Redirect::to('auth');
 });
