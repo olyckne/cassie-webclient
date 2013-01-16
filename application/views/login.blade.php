@@ -14,9 +14,15 @@
 	@endif
 	<h2>Cassie web client</h2>
 	<p class="lead">You need to login. <br>
-		For now you can only do it via you github account
 	</p>
-
-	<a class="btn btn-primary btn-large" href="auth/login">Login</a>
+	{{ Form::open("auth/login", "POST", array("class" => "form-horizontal")) }}
+		{{ Form::text('username', "", array("placeholder" => "username")) }}
+		<br>
+		<br>
+		{{ Form::password('password', array("placeholder" => "password")) }}
+		<br><br>
+		{{ Form::submit("Login", array("class" => "btn btn-primary")) }}
+		<a class="btn btn-primary" href="auth/login/github">Login via github</a>
+	{{ Form::close() }}
 </div>
 @endsection

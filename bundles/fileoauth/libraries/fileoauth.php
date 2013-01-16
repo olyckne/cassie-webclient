@@ -25,15 +25,25 @@ class FileOauth extends Laravel\Auth\Drivers\Driver {
 	public function attempt($arguments = array()) {
 		$users = Config::get("fileoauth::users");
 		$user = false;
+		$ok = false;
+
 		if(array_key_exists($arguments['provider'], $users)) {
 			foreach ($users[$arguments['provider']] as $arr) {
 				if($arr['username'] == $arguments['username']) {
-					$user = $arr;
-					break;
+					if($arguments['provider'] == 'cassie') {
+						var_dump($arr);
+						if(Hash::check($arguments['password'], $arr['password']))
+							$ok = true;
+					} else {
+						$ok = true;
+					}
+					if($ok)	{
+						$user = $arr;
+						break;
+					}
 				}
 			}
 		}
-
 		if($user) {
 			return $this->login($user['id'], array_get($arguments, 'remember'));
 		} else {
