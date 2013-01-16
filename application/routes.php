@@ -32,11 +32,14 @@
 |
 */
 
+/*
 Route::get('/', function()
 {
 	return View::make('home.index');
 });
+*/
 
+Route::controller(Controller::detect());
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers
