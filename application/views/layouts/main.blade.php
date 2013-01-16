@@ -7,6 +7,7 @@
 		{{ Asset::scripts() }}
 	</head>
 	<body>
+		@section("header")
 		<header>
 			<div class="navbar navbar-inverse navbar-static-top">
 				<div class="navbar-inner">
@@ -30,6 +31,7 @@
 				</div>
 			</div>
 		</header>
+		@yield_section
 		<div class="container-fluid">
 
 			<div class="row-fluid">
@@ -39,7 +41,6 @@
 				<div class="span8">
 					<article class="content">
 						@yield("content")
-		
 					</article>						
 				</div>
 
