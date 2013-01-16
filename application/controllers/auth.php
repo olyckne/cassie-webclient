@@ -10,11 +10,14 @@ class Auth_Controller extends Base_Controller {
  	public function action_login($service="cassie") {
  		Bundle::start("laravel-oauth2");
 
- 	
+ 		if(Input::has("code")) $service = "github";
+
  		if($service == "github") {
+ 			$conf = Config::get("fileoauth::users");
+
 	 		$provider = OAuth2::provider($service, array(
-	 			'id' => '5bb420dd128b742c70d4',
-	 			'secret' => '0f9b63d8ef04c5d9b26d9674761668ab61a8fe3d'
+	 			'id' => $conf['services']['github']['app_id'],
+	 			'secret' => $conf['services']['github']['app_secret']
 	 		));
 
 
