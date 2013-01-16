@@ -19,12 +19,17 @@
 	padding: 0px;
 }
 
-.output p:nth-child(odd) {
+.output pre:nth-child(odd) {
 	background-color: rgba(200,200,200,0.5) !important;
 }
 
-.output p {
+.output pre {
 	margin: 0px;
 	padding: 5px;
 	width: 100%;
+}
+
+pre {
+	background: none;
+	border: none;
 }
