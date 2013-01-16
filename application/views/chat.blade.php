@@ -2,7 +2,7 @@
 
 @section("content")
 
-<div class="output">
+<div class="output hero-unit">
 	
 </div>
 <form id="chatForm" action="">
