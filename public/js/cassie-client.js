@@ -15,20 +15,23 @@ Cassie_client.prototype = {
 	
 	init: function() {
 		var _this = this;
+
 		if(!this.socket) {
-			this.socket = io.connect(this.url);
+			try {
+				this.socket = io.connect(this.url);
+				console.log(this.socket);
 
-			console.log(this.socket);
+				this.socket.on("connect", function() {
+					_this.outputLog("Connected");
+				});
 
-			this.socket.on("connect", function() {
-				_this.outputLog("Connected");
-			});
-
-			this.socket.on("message", function(msg) {
-				_this.outputLog(msg);
-			});
+				this.socket.on("message", function(msg) {
+					_this.outputLog(msg);
+				});
+			} catch(e) {
+				this.outputLog("Something wrong. Server down?");
+			}
 		}
-
 		this.bindForm();
 		this.bindScroll();
 		this.outputElem.css("position", "relative");
