@@ -22,7 +22,7 @@
 		{{ Form::password('password', array("placeholder" => "password")) }}
 		<br><br>
 		{{ Form::submit("Login", array("class" => "btn btn-primary")) }}
-		<a class="btn btn-primary" href="auth/login/github">Login via github</a>
+		<a class="btn btn-primary" href="{{ URL::to("auth/login/github")}}">Login via github</a>
 	{{ Form::close() }}
 </div>
 @endsection
