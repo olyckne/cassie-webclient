@@ -1,7 +1,7 @@
 function Cassie_client(options) {
 	this.url = options.url || "ws://localhost:8080";
 	this.outputElem = $(options.outputElem) || $(".output");
-	this.wrapperElem = options.wrapperElem || "<p/>";
+	this.wrapperElem = options.wrapperElem || "<pre/>";
 	this.form = options.form || "#cassie_form";
 	this.formInput = options.formInput || "#cassie_form_input";
 	this.newMessageClass = options.newMessageClass || "cassie_new_message";
@@ -63,7 +63,7 @@ Cassie_client.prototype = {
 			if(this.scrollIfAtBottom) this.scrollOutput(elem);
 		}
 		
-		elem.html($("<span/>").html(new Date().toLocaleTimeString()+": ").html()+elem.html());
+		elem.html($("<span/>").html(new Date().toLocaleTimeString()+":<br>").html()+elem.html());
 		console.log("done");
 	},
 
