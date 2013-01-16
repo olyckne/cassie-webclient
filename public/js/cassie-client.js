@@ -47,11 +47,12 @@ Cassie_client.prototype = {
 			img = null,
 			_this = this;
 
-		elem.addClass("cassie_new_message").css({"background-color": "yellow"});
+		elem.addClass("cassie_new_message").css({"background-color": "rgba(150,0,0,0.5)"});
 		this.outputElem.append(elem);
 
 		if(this.isImage(msg)) {
-			img = $("<img/>").attr("src", msg).appendTo(elem).load( function() {
+			img = $("<img/>").attr("src", msg).load( function() {
+				$(this).appendTo(elem);
 				console.log("done loading");
 				console.log("height here: "+$(this).height());
 				if(_this.scrollIfAtBottom) _this.scrollOutput(this);
