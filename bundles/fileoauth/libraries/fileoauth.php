@@ -8,8 +8,8 @@ class FileOauth extends Laravel\Auth\Drivers\Driver {
 	public function retrieve($id) {
 		if(filter_var($id, FILTER_VALIDATE_INT) !== false) {
 			$users = Config::get("fileoauth::users");
-			foreach($users as $arr) {
-				foreach($arr as $a) {
+			foreach($users['services'] as $arr) {
+				foreach($arr['users'] as $a) {
 					$user = ($a['id'] == $id);
 					if($user) break;
 				}
@@ -27,8 +27,8 @@ class FileOauth extends Laravel\Auth\Drivers\Driver {
 		$user = false;
 		$ok = false;
 
-		if(array_key_exists($arguments['provider'], $users)) {
-			foreach ($users[$arguments['provider']] as $arr) {
+		if(array_key_exists($arguments['provider'], $users['services'])) {
+			foreach ($users['services'][$arguments['provider']]['users'] as $arr) {
 				if($arr['username'] == $arguments['username']) {
 					if($arguments['provider'] == 'cassie') {
 						var_dump($arr);
@@ -44,6 +44,7 @@ class FileOauth extends Laravel\Auth\Drivers\Driver {
 				}
 			}
 		}
+
 		if($user) {
 			return $this->login($user['id'], array_get($arguments, 'remember'));
 		} else {
