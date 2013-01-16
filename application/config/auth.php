@@ -16,7 +16,9 @@ return array(
 	|
 	*/
 
-	'driver' => 'eloquent',
+	'driver' => 'FileOAuth',
+
+	'provider' => 'provider',
 
 	/*
 	|--------------------------------------------------------------------------
