@@ -15,9 +15,7 @@ Web client for the chat bot [Cassie](https://github.com/olyckne/cassie)
   - Setup credentials in bundles/fileoatuh/users.php  
 - For github authorization:
   - Set up an application on github
-  - Set your github username in bundles/fileoauth/users.php
-  - Setup your id and client in application/controllers/auth.php
-  - That's it, and it isn't that nice, I know.
+  - Set your credentials in bundles/fileoauth/users.php
 
 ### Customize
 --
