@@ -21,6 +21,7 @@ Web client for the chat bot [Cassie](https://github.com/olyckne/cassie)
 --
 As standard it uses ws://localhost:3030.
 Change it in and other stuff in `public/js/main.js`
+If you change the url don't forget to change `Asset::add("socket", "http://localhost:3030/socket.io/socket.io.js")` to point to `socket.io/socket.io.js` on the server in `application/controllers/base.php`
 
 ### "Wow, this is awful, it's better I write my on web client"
 --
