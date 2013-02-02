@@ -21,9 +21,9 @@ Web client for the chat bot [Cassie](https://github.com/olyckne/cassie)
 ### Customize
 --
 As standard it uses ws://localhost:3030.
-Change it in and other stuff in `public/js/main.js`
-If you change the url don't forget to change `Asset::add("socket", "http://localhost:3030/socket.io/socket.io.js")` to point to `socket.io/socket.io.js` on the server in `application/controllers/base.php`
+Change it in and other stuff in [public/js/main.js](https://github.com/olyckne/cassie-webclient/blob/master/public/js/main.js)
+If you change the url don't forget to change `Asset::add("socket", "http://localhost:3030/socket.io/socket.io.js")` to point to `socket.io/socket.io.js` on the server in [application/controllers/base.php](https://github.com/olyckne/cassie-webclient/blob/master/application/controllers/base.php)
 
 ### "Wow, this is awful, it's better I write my on web client"
 --
-Go on, check out `public/js/cassie-client.js` for something kind of like a js-client (yeah, it might be reasonable to have its own repo)
+Go on, check out [public/js/cassie-client.js](https://github.com/olyckne/cassie-webclient/blob/master/public/js/cassie-client.js) for something kind of like a js-client (yeah, it might be reasonable to have its own repo)
