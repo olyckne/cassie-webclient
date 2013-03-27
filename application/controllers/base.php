@@ -3,7 +3,7 @@
 class Base_Controller extends Controller {
 
 
-	
+
 	public function __construct() {
 		Asset::add("bootstrap-css", "assets/bootstrap/css/bootstrap.min.css");
 		Asset::add("bootstrap-css-responsive", "assets/bootstrap/css/bootstrap-responsive.min.css");
@@ -11,7 +11,7 @@ class Base_Controller extends Controller {
 		Asset::add("style", "css/style.css");
 
 		Asset::add("socket", "http://localhost:3030/socket.io/socket.io.js");
-		Asset::add("cassie-client", "js/cassie-client.js");
+		Asset::add("cassie-client", "components/cassie-client.js/cassie-client.js");
 
 		Asset::add("script", "js/main.js");
 
@@ -26,7 +26,7 @@ class Base_Controller extends Controller {
 	 * @param  array     $parameters
 	 * @return Response
 	 */
-	
+
 	public function __call($method, $parameters)
 	{
 		return Response::error('404');

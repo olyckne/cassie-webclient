@@ -1,0 +1,6 @@
+{
+  "name": "cassie-client",
+  "dependencies": {
+    "cassie-client.js": "~0.2.0"
+  }
+}

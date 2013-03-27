@@ -38,3 +38,4 @@ publish
 
 # Ignore Sublime Text 2 project files (HP)
 *.sublime*
+public/components
