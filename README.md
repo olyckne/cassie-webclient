@@ -11,7 +11,9 @@ Web client for the chat bot [Cassie](https://github.com/olyckne/cassie)
 --
 - Make sure you meet [Laravels requirements](http://laravel.com/docs/install#requirements) 
 - Download
-- cd to directory and generate key: `php artisan key:generate`
+- cd to directory and:
+  - `bower install` to install cassie-client.js [Bower info](http://twitter.github.com/bower/)
+  - `php artisan key:generate` to generate key
 - For username-password authorization
   - Setup credentials in bundles/fileoatuh/users.php  
 - For github authorization:
